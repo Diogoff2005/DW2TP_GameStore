@@ -1,10 +1,18 @@
 .navBar {
-  background-color: black;
+  max-width: 1200px;
 }
 
 .navBarList {
   display: flex;
+  align-items: center;
   text-decoration: none;
   list-style: none;
   color: red;
+  margin: 0px;
+}
+
+.searchBar {
+  width: 20em;
+  height: 2em;
+  border-radius: 5em;
 }

@@ -8,7 +8,7 @@ const NavBar = () => {
           <h1>Lowkey</h1>
         </li>
         <li>
-          <input></input>
+          <input className="searchBar"></input>
         </li>
         <li></li>
         <li></li>

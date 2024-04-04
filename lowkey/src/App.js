@@ -1,10 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/navBar";
 
 function App() {
   return (
-    <header className="App-header">
+    <header
+      style={{ backgroundColor: "black", width: "100%", height: "3em" }}
+      className="App-header"
+    >
       <NavBar />
     </header>
   );
