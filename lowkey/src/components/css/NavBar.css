@@ -1,0 +1,10 @@
+.navBar {
+  background-color: black;
+}
+
+.navBarList {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  color: red;
+}
