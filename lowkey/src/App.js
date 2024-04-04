@@ -5,7 +5,11 @@ import NavBar from "./components/navBar";
 function App() {
   return (
     <header
-      style={{ backgroundColor: "black", width: "100%", height: "3em" }}
+      style={{
+        backgroundColor: "black",
+        width: "100%",
+        borderBottom: "5px solid red",
+      }}
       className="App-header"
     >
       <NavBar />

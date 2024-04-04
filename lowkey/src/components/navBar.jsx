@@ -7,11 +7,18 @@ const NavBar = () => {
         <li>
           <h1>Lowkey</h1>
         </li>
-        <li>
-          <input className="searchBar"></input>
+        <li className="search">
+          <input className="searchBar" placeholder="Search for games"></input>
         </li>
-        <li></li>
-        <li></li>
+        <li className="iconLi">
+          <span className="material-icons icon">star</span>
+        </li>
+        <li className="iconLi">
+          <span className="material-icons icon">shopping_cart</span>
+        </li>
+        <li className="iconLi">
+          <span className="material-icons icon">account_circle</span>
+        </li>
       </ul>
     </nav>
   );

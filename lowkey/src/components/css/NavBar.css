@@ -1,18 +1,44 @@
 .navBar {
-  max-width: 1200px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 2em;
+  margin: 0.5em;
+  color: red;
 }
 
 .navBarList {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   text-decoration: none;
   list-style: none;
-  color: red;
   margin: 0px;
+  padding: 0px;
+}
+
+.classLi {
+  margin-left: auto;
+}
+
+.search {
+  margin: 0 auto;
 }
 
 .searchBar {
-  width: 20em;
-  height: 2em;
-  border-radius: 5em;
+  width: 25em;
+  height: 3em;
+  border-radius: 1em;
+  border: 0;
+}
+
+.icon {
+  font-size: 2.5em;
+  margin-top: 5px;
+  margin-left: 0.8em;
+  padding: 0px;
 }
