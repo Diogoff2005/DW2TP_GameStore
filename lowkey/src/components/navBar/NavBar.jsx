@@ -1,4 +1,4 @@
-import "./css/NavBar.css";
+import "./NavBar.css";
 
 const NavBar = () => {
   return (
@@ -11,13 +11,24 @@ const NavBar = () => {
           <input className="searchBar" placeholder="Search for games"></input>
         </li>
         <li className="iconLi">
-          <span className="material-icons icon">star</span>
+          <a src="#">
+            <span className="material-icons icon">star</span>
+          </a>
         </li>
         <li className="iconLi">
-          <span className="material-icons icon">shopping_cart</span>
+          <a src="#">
+            <span className="material-icons icon">shopping_cart</span>
+          </a>
         </li>
         <li className="iconLi">
-          <span className="material-icons icon">account_circle</span>
+          <a src="#">
+            <span
+              className="material-icons icon"
+              style={{ marginRight: "0.5em" }}
+            >
+              account_circle
+            </span>
+          </a>
         </li>
       </ul>
     </nav>
