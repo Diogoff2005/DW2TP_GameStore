@@ -1,9 +1,10 @@
 import logo from "./logo.svg";
 import "./App.css";
 import NavBar from "./components/navBar/NavBar";
-
+import Buttonsubmit from "./components/Buttonsubmit/Buttonsubmit";
 function App() {
   return (
+    <>
     <header
       style={{
         backgroundColor: "black",
@@ -14,6 +15,8 @@ function App() {
     >
       <NavBar />
     </header>
+    <Buttonsubmit />
+    </>
   );
 }
 
