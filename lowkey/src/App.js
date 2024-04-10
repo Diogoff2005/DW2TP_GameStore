@@ -1,6 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
 import NavBar from "./components/navBar/NavBar";
+import LoginPage from "./components/login-page/LoginPage";
+
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
       className="App-header"
     >
       <NavBar />
+      <LoginPage />
     </header>
   );
 }
