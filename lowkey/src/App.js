@@ -14,6 +14,7 @@ function App() {
       className="App-header"
     >
       <NavBar />
+      <LoginPage />
     </header>
     <Buttonsubmit />
     </>
