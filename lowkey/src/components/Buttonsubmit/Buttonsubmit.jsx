@@ -1,7 +1,7 @@
 import React from "react";
 import "./Buttonsubmit.css";
 // Button component
-const Button = ({ onClick, children, className }) => {
+const Button = ({ onClick, children, className,}) => {
   return (
     <button onClick={onClick} className={className}>
       {children}
@@ -9,7 +9,7 @@ const Button = ({ onClick, children, className }) => {
   );
 };
 
-const Buttonsubmit = () => {
+const Buttonsubmit = ({textobutton} ) => {
   const handleClick = () => {
     console.log("Button clicked!");
   };
@@ -17,7 +17,7 @@ const Buttonsubmit = () => {
   return (
     <div>
       <Button onClick={handleClick} className="button">
-        Login
+        {textobutton}
       </Button>
     </div>
   );

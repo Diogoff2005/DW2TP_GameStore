@@ -3,7 +3,7 @@ import "./App.css";
 import NavBar from "./components/navBar/NavBar";
 import LoginPage from "./components/login-page/LoginPage";
 import Buttonsubmit from "./components/Buttonsubmit/Buttonsubmit";
-import RegisterPage from "./components/register page/RegisterPage";
+import RegisterPage from "./components/register-page/RegisterPage";
 
 function App() {
   return (
@@ -18,7 +18,6 @@ function App() {
       >
         <NavBar />
       </header>
-      {/* <LoginPage /> */}
       <RegisterPage />
     </>
   );
