@@ -1,19 +1,19 @@
-.button{
-width: 152px;
-height:  45px;
-border-radius: 50px;
-padding: 5px, 10px, 5px, 10px;
-font-weight: 800;
-align-items: center;
-background-color: #FF3132;
-color: white;
-gap: 5px;
-border: none;
-font-family: Roboto;
-
+.button {
+  width: 152px;
+  height: 45px;
+  border-radius: 50px;
+  padding: 5px, 10px, 5px, 10px;
+  font-weight: 800;
+  align-items: center;
+  background-color: #ff3132;
+  color: white;
+  gap: 5px;
+  border: none;
+  font-family: Roboto;
+  font-size: 18px;
 }
 
-.button:hover{
-opacity: 90%;
-color: #000000;
+.button:hover {
+  opacity: 90%;
+  color: #000000;
 }

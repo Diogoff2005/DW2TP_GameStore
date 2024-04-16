@@ -7,8 +7,8 @@ const LoginPage = () => {
   return (
     <div className="loginPage">
       <div className="loginForm">
-        <h1>Login</h1>
-        <form className="loginForm">
+        <h2>Login</h2>
+        <form className="Form">
           <input
             type="text"
             placeholder="Username"
@@ -19,7 +19,7 @@ const LoginPage = () => {
             placeholder="Password"
             className="loginInput"
           ></input>
-          <Buttonsubmit buttomtext={"Login"}/>
+          <Buttonsubmit textobutton={"Login"}/>
         </form>
       </div>
     </div>
