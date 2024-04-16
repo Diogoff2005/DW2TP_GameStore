@@ -1,3 +1,4 @@
+import Buttonsubmit from "../Buttonsubmit/Buttonsubmit";
 import "./LoginPage.css";
 
 /* const NavBar = () => {
@@ -51,11 +52,12 @@ const LoginPage = () => {
             placeholder="Password"
             className="loginInput"
           ></input>
-          <input
+          {/* <input
             type="submit"
             value="Login"
             className="loginButton"
-          ></input>
+          ></input> */}
+          <Buttonsubmit />
         </form>
       </div>
     </div>

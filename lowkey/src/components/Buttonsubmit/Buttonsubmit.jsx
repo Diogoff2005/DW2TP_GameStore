@@ -9,7 +9,7 @@ const Button = ({ onClick, children, className }) => {
   );
 };
 
-const App = () => {
+const Buttonsubmit = () => {
   const handleClick = () => {
     console.log("Button clicked!");
   };
@@ -23,4 +23,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Buttonsubmit;
