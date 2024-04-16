@@ -1,5 +1,5 @@
 import Buttonsubmit from "../Buttonsubmit/Buttonsubmit";
-import "./LoginPage.css";
+import "./RegisterPage.css";
 
 /* const NavBar = () => {
   return (
@@ -36,21 +36,31 @@ import "./LoginPage.css";
   );
 }; */
 
-const LoginPage = () => {
+const RegisterPage = () => {
   return (
-    <div className="loginPage">
-      <div className="loginForm">
-        <h1>Login</h1>
-        <form className="loginForm">
+    <div className="RegisterPage">
+      <div className="RegisterForm">
+        <h1>Register</h1>
+        <form className="RegisterForm">
           <input
             type="text"
             placeholder="Username"
-            className="loginInput"
+            className="RegisterinInput"
           ></input>
           <input
             type="password"
             placeholder="Password"
-            className="loginInput"
+            className="RegisterinInput"
+          ></input>
+          <input
+            type="password"
+            placeholder="Repeat Password"
+            className="RegisterinInput"
+          ></input>
+          <input
+            type="text"
+            placeholder="E-mail"
+            className="RegisterinInput"
           ></input>
           {/* <input
             type="submit"
@@ -64,4 +74,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
