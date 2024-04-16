@@ -35,7 +35,11 @@
   .RegisterPage h2 {
     color: white;
     font-size: 36px;
+  }
 
-
+  .RegisterPage label {
+    color: white;
+    font-size: 20px;
+    text-align: left;
   }
   
