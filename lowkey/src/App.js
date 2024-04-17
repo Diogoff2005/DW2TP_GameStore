@@ -1,19 +1,26 @@
 import logo from "./logo.svg";
 import "./App.css";
-import NavBar from "./components/navBar/NavBar";
+import Layout from "./components/Layout";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "../src/paginas/home";
+import Profile from "../src/paginas/profile";
+import Favoritos from "../src/paginas/favoritos";
+import Cart from "../src/paginas/cart";
 
 function App() {
   return (
-    <header
-      style={{
-        backgroundColor: "black",
-        width: "100%",
-        borderBottom: "5px solid red",
-      }}
-      className="App-header"
-    >
-      <NavBar />
-    </header>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="favoritos" element={<Favoritos />} />
+            <Route path="cart" element={<Cart />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
