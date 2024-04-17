@@ -6,7 +6,7 @@ const Banner = ({ path }) => {
       <img className="banner" src={path} alt="Banner" />
       <div>
         <div>
-          <h2>
+          <h2 className="Bannerh2">
             God of war <br></br>
             <span className="bannerPrice">29.99€</span>
           </h2>

@@ -23,8 +23,13 @@
   left: 0;
   color: white;
   font-size: 2em;
+  margin: 0.5em;
+}
+
+.Bannerh2 {
+  font-size: 3vw;
 }
 
 .bannerPrice {
-  font-size: 0.9em;
+  font-size: 2.5vw;
 }
