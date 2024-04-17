@@ -4,6 +4,7 @@ import NavBar from "./components/navBar/NavBar";
 import LoginPage from "./components/login-page/LoginPage";
 import Buttonsubmit from "./components/Buttonsubmit/Buttonsubmit";
 import RegisterPage from "./components/register-page/RegisterPage";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <NavBar />
       </header>
       <LoginPage/>
+      <Footer/>
+      
     </>
   );
 }
