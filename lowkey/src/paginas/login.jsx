@@ -1,6 +1,8 @@
 import NavBar from "../components/navBar/NavBar";
 import Banner from "../components/Banner/Banner";
 import loginimage from "../components/Banner/Login.png";
+import LoginPage from "../components/login-page/LoginPage";
+import "./login.css";
 
 const Login = () => {
   return (
@@ -8,8 +10,11 @@ const Login = () => {
       <nav>
         <NavBar />
       </nav>
-      <main>
-        <Banner path={loginimage} />
+      <main className="boas">
+        <Banner path={loginimage} className="o" />
+        <div className="adeus">
+          <LoginPage />
+        </div>
       </main>
     </div>
   );

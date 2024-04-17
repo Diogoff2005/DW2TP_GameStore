@@ -1,18 +1,23 @@
 import NavBar from "../components/navBar/NavBar";
 import Banner from "../components/Banner/Banner";
 import loginimage from "../components/Banner/Login.png";
+import Register from "../components/register-page/RegisterPage";
+import "./login.css";
 
-const Register = () => {
+const Registerpage = () => {
   return (
     <div>
       <nav>
-        <NavBar/>
+        <NavBar />
       </nav>
-      <main>
-        <Banner path={loginimage} />
+      <main className="boas">
+        <Banner path={loginimage} className="o" />
+        <div className="adeus">
+          <Register />
+        </div>
       </main>
     </div>
   );
 };
 
-export default Register;
+export default Registerpage;

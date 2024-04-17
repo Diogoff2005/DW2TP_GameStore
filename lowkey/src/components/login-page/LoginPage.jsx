@@ -1,7 +1,7 @@
 import Buttonsubmit from "../Buttonsubmit/Buttonsubmit";
 import "./LoginPage.css";
-import Banner from "../components/Banner/Banner";
-import loginimage from "../components/Banner/Login.png";
+
+
 
 const LoginPage = () => {
   return (
@@ -10,7 +10,6 @@ const LoginPage = () => {
       <div className="LoginForm">
         <h2>Login</h2>
         <form className="Form">
-        <Banner path={loginimage} />
 
           <label>Username:</label>
           <input
@@ -35,7 +34,9 @@ const LoginPage = () => {
           />
         </form>
       </div>
+
     </div>
+    
   );
 };
 
