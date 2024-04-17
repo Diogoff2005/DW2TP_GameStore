@@ -1,6 +1,5 @@
-import imagem from "./RDR2.jpg";
 import "./card.css";
-const Card = ({ name, price }) => {
+const Card = ({ name, price, imagem }) => {
   return (
     <div
       className="card grid-container"
