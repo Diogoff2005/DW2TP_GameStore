@@ -1,34 +1,37 @@
 import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <nav className="navBar">
       <ul className="navBarList">
         <li>
-          <h1>Lowkey</h1>
+          <Link className="link" to="/">
+            <h1>Lowkey</h1>
+          </Link>
         </li>
         <li className="search">
           <input className="searchBar" placeholder="Search for games"></input>
         </li>
         <li className="iconLi">
-          <a src="#">
+          <Link className="link" to="/favoritos">
             <span className="material-icons icon">star</span>
-          </a>
+          </Link>
         </li>
         <li className="iconLi">
-          <a src="#">
+          <Link className="link" to="/favoritos">
             <span className="material-icons icon">shopping_cart</span>
-          </a>
+          </Link>
         </li>
         <li className="iconLi">
-          <a src="#">
+          <Link className="link" to="/profile">
             <span
               className="material-icons icon"
               style={{ marginRight: "0.5em" }}
             >
               account_circle
             </span>
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
