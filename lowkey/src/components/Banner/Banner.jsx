@@ -1,10 +1,9 @@
 import "./Banner.css";
-import banner from "./banner.jpg";
 
-const Banner = () => {
+const Banner = ({ path }) => {
   return (
     <figure className="bannerFigure">
-      <img className="banner" src={banner} alt="Banner" />
+      <img className="banner" src={path} alt="Banner" />
       <div>
         <div>
           <h2>
