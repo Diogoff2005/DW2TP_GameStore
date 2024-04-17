@@ -1,21 +1,11 @@
 import NavBar from "../components/navBar/NavBar";
 import Banner from "../components/Banner/Banner";
 import bannerImage from "../components/Banner/banner.jpg";
+import Footer from "../components/footer/Footer";
 
 const Home = () => {
   return (
     <>
-      <header
-        style={{
-          backgroundColor: "black",
-          width: "100%",
-          borderBottom: "5px solid red",
-        }}
-        className="App-header"
-      >
-        <NavBar />
-      </header>
-
       <main
         style={{
           margin: "0px",
@@ -24,6 +14,8 @@ const Home = () => {
       >
         <Banner path={bannerImage}></Banner>
       </main>
+
+      <Footer />
     </>
   );
 };
