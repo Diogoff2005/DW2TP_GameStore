@@ -1,25 +1,28 @@
 import Buttonsubmit from "../Buttonsubmit/Buttonsubmit";
 import "./LoginPage.css";
 
-
-
 const LoginPage = () => {
   return (
-    <div className="loginPage">
-      <div className="loginForm">
+    <div className="LoginPage">
+      <div className="LoginForm">
         <h2>Login</h2>
         <form className="Form">
+          <label>Username:</label>
           <input
             type="text"
-            placeholder="Username"
-            className="loginInput"
+            placeholder="Please enter the username..."
+            className="LoginInput"
           ></input>
+          <label>Password:</label>
           <input
             type="password"
-            placeholder="Password"
-            className="loginInput"
+            placeholder="Please enter the password..."
+            className="LoginInput"
           ></input>
-          <Buttonsubmit textobutton={"Login"}/>
+          <h3 className="Forgotpassoword">Forgot the password...</h3>
+          <Buttonsubmit textobutton={"Login"} />
+          <h3 className="NewToLowkey">New to Lowkey?</h3>
+          <Buttonsubmit textobutton={"Create an account"} />
         </form>
       </div>
     </div>

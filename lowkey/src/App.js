@@ -18,7 +18,7 @@ function App() {
       >
         <NavBar />
       </header>
-      <RegisterPage/>
+      <LoginPage/>
     </>
   );
 }
