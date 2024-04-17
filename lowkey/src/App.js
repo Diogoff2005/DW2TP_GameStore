@@ -1,8 +1,23 @@
 import "./App.css";
-import Register from "./paginas/register";
+import NavBar from "./components/navBar/NavBar";
+import Card from "./components/card/card";
 
 function App() {
-  return <Register />;
+  return (
+    <>
+      <header
+        style={{
+          backgroundColor: "black",
+          width: "100%",
+          borderBottom: "5px solid red",
+        }}
+        className="App-header"
+      >
+        <NavBar />
+      </header>
+      <Card />
+    </>
+  );
 }
 
 export default App;
