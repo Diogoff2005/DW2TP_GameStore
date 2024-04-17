@@ -19,7 +19,7 @@ const LoginPage = () => {
             placeholder="Please enter the password..."
             className="LoginInput"
           ></input>
-          <h3 className="Forgotpassoword">Forgot the password...</h3>
+          <a  href=""className="Forgotpassoword">Forgot the password...</a>
           <Buttonsubmit textobutton={"Login"} />
           <h3 className="NewToLowkey">New to Lowkey?</h3>
           <Buttonsubmit textobutton={"Create an account"} />
