@@ -52,11 +52,14 @@
   margin-top: -12px;
 }
 
-.NewToLowkey{
-
+.NewToLowkey {
   color: white;
   font-size: 20px;
   text-align: left;
   font-weight: bold;
   text-align: center;
+}
+
+.Createaccount {
+  width: 200px;
 }
