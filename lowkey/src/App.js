@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import NavBar from "./components/navBar/NavBar";
+import LoginPage from "./paginas/login";
 
 function App() {
   return (
@@ -11,8 +12,7 @@ function App() {
         borderBottom: "5px solid red",
       }}
       className="App-header"
-    >
-      <NavBar />
+    ><login></login>
     </header>
   );
 }
