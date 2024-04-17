@@ -4,16 +4,18 @@ import NavBar from "./components/navBar/NavBar";
 
 function App() {
   return (
-    <header
-      style={{
-        backgroundColor: "black",
-        width: "100%",
-        borderBottom: "5px solid red",
-      }}
-      className="App-header"
-    >
-      <NavBar />
-    </header>
+    <>
+      <header
+        style={{
+          backgroundColor: "black",
+          width: "100%",
+          borderBottom: "5px solid red",
+        }}
+        className="App-header"
+      >
+        <NavBar />
+      </header>
+    </>
   );
 }
 
