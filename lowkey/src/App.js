@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import NavBar from "./components/navBar/NavBar";
 import LoginPage from "./paginas/login";
@@ -12,7 +11,8 @@ function App() {
         borderBottom: "5px solid red",
       }}
       className="App-header"
-    ><login></login>
+    >
+      <LoginPage />
     </header>
   );
 }

@@ -1,17 +1,18 @@
 import NavBar from "../components/navBar/NavBar";
+import Banner from "../components/Banner/Banner";
+import loginimage from "../components/Banner/Login.png";
 
-const login = () => {
-    return (
-        <nav>
-            <NavBar/>
-        </nav>
-        <banner>
-            <Banner></Banner>
-        </banner>
-        <main>
-            <LoginPage></LoginPage>
-        </main>
-    )
-}
-  
-export default login
+const Login = () => {
+  return (
+    <div>
+      <nav>
+        <NavBar />
+      </nav>
+      <main>
+        <Banner path={loginimage} />
+      </main>
+    </div>
+  );
+};
+
+export default Login;
