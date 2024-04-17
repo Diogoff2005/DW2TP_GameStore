@@ -2,7 +2,7 @@ import "./App.css";
 import Home from "./paginas/home";
 
 function App() {
-  return <Home />;
+  return;
 }
 
 export default App;
