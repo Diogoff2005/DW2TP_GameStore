@@ -17,7 +17,8 @@
   color: white;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
-  margin-left: 20px;
+  margin-left: 8px;
+  margin-bottom: 15px;
 }
 * {
   box-sizing: border-box;
@@ -61,4 +62,12 @@
 }
 .col-6 {
   width: 100%;
+}
+
+.price {
+  display: flex;
+  justify-content: end;
+
+  width: fit-content;
+  padding-right: 22px;
 }
