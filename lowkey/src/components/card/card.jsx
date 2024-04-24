@@ -5,7 +5,7 @@ const Card = ({ name, price, imagem }) => {
       className="card grid-container"
       style={{
         background: `url(${imagem})`,
-        backgroundSize: `100%`,
+        backgroundSize: `cover`,
         minWidth: `460px`,
         maxWidth: `460px`,
       }}
