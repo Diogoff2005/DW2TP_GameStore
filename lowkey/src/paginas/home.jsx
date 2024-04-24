@@ -12,7 +12,11 @@ const Home = () => {
           padding: "0px",
         }}
       >
-        <Banner path={bannerImage}></Banner>
+        <Banner
+          path={bannerImage}
+          name={"God of War"}
+          price={"29.99€"}
+        ></Banner>
         <Trending />
       </main>
     </>
