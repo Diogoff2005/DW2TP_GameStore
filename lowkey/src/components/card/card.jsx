@@ -11,7 +11,7 @@ const Card = ({ name, price, imagem }) => {
       }}
     >
       <h2 className="GameName col-4">{name}</h2>
-      <h2 className="price col-2">{price}</h2>
+      <h2 className="price col-2">{price}€</h2>
     </div>
   );
 };
