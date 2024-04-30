@@ -1,0 +1,64 @@
+.GameDetails {
+    /* Rectangle 10 */
+  
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    max-width: 460px;
+    height: 250px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    filter: drop-shadow(7px 7px 4px rgba(139, 139, 139, 0.2));
+    border-radius: 20px;
+  }
+  
+  .GameDetails h2 {
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    margin-left: 20px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  .grid-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  /*-- our cleafix hack -- */
+  .row:before,
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  [class*="col-"] {
+    float: left;
+    min-height: 1px;
+    width: 16.66%;
+  }
+  
+  .col-1 {
+    width: 16.66%;
+  }
+  .col-2 {
+    width: 33.33%;
+  }
+  .col-3 {
+    width: 50%;
+  }
+  .col-4 {
+    width: 66.66%;
+  }
+  .col-5 {
+    width: 83.33%;
+  }
+  .col-6 {
+    width: 100%;
+  }
+  

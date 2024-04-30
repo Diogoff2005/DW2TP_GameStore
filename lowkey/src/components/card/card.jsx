@@ -1,4 +1,4 @@
-import imagem from "./RDR2.jpg";
+import imagem from "./GOW.jpg";
 import "./card.css";
 const Card = ({ name, price }) => {
   return (
