@@ -2,9 +2,12 @@ import "./App.css";
 import Layout from "./components/Layout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../src/paginas/home";
+import Login from "../src/paginas/login";
+import Register from "../src/paginas/register";
+import Cart from "../src/paginas/cart";
 import Profile from "../src/paginas/profile";
 import Favoritos from "../src/paginas/favoritos";
-import Cart from "../src/paginas/cart";
+import BackOffice from "../src/paginas/backOffice";
 
 function App() {
   return (
@@ -12,10 +15,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
+            <Route path="/" index element={<Home />} />
+            <Route path="backOffice" element={<BackOffice />} />
             <Route path="profile" element={<Profile />} />
             <Route path="favoritos" element={<Favoritos />} />
             <Route path="cart" element={<Cart />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
           </Route>
         </Routes>
       </BrowserRouter>
