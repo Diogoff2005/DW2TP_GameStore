@@ -15,7 +15,10 @@ function App() {
             <Route index element={<Home />} />
             <Route path="profile" element={<Profile />} />
             <Route path="favoritos" element={<Favoritos />} />
-            <Route path="cart" element={<Cart />} />
+            <Route
+              path="cart"
+              element={<Cart />}
+            />
           </Route>
         </Routes>
       </BrowserRouter>
