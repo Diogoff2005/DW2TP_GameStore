@@ -1,5 +1,5 @@
 import imagem from "./GOW.jpg";
-import "./card.css";
+import "./Card.css";
 const Card = ({ name, price, imagem }) => {
   return (
     <div
