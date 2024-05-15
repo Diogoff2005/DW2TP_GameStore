@@ -8,6 +8,7 @@ import Cart from "../src/paginas/cart";
 import Profile from "../src/paginas/profile";
 import Favoritos from "../src/paginas/favoritos";
 import BackOffice from "../src/paginas/backOffice";
+import GamePage from "../src/paginas/game";
 import ResetEmailPage from "../src/paginas/resetPasswordEmail";
 import ResetPasswordPage from "./paginas/resetPassword";
 
@@ -29,6 +30,20 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      {
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route element={<Home />} />
+              <Route path="profile" element={<Profile />} />
+              <Route path="favoritos" element={<Favoritos />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="/"element={<GamePage />} />
+              <Route path="game/:id" element={<GamePage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      }
     </>
   );
 }

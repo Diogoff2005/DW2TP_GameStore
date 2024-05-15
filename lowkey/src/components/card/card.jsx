@@ -1,3 +1,4 @@
+import imagem from "./GOW.jpg";
 import "./Card.css";
 const Card = ({ name, price, imagem }) => {
   return (
