@@ -1,0 +1,83 @@
+.main {
+  max-width: 1200px;
+  margin: auto;
+}
+h3 {
+  font-family: Roboto;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23.44px;
+  text-align: left;
+  margin-left: 60px;
+
+}
+.align{
+padding-bottom: 26px;
+
+
+}
+
+.title {
+  color: white;
+  height: 42px;
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 42.19px;
+  text-align: left;
+  
+}
+.Summary{
+  color: white;
+  height: 42px;
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 42.19px;
+  text-align: left;
+  margin-left: 58px;
+}
+.cart {
+  text-align: center;
+}
+.cartcontent {
+  padding-bottom: 12px;
+}
+
+.grid-container {
+  width: 100%;
+}
+
+/*-- our cleafix hack -- */
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+[class*="col-"] {
+  float: left;
+  min-height: 1px;
+  width: 16.66%;
+}
+
+.col-1 {
+  width: 16.66%;
+}
+.col-2 {
+  width: 33.33%;
+}
+.col-3 {
+  width: 50%;
+}
+.col-4 {
+  width: 66.66%;
+}
+.col-5 {
+  width: 83.33%;
+}
+.col-6 {
+  width: 100%;
+}
