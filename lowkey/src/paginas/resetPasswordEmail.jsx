@@ -1,19 +1,19 @@
 import Banner from "../components/Banner/Banner";
 import loginimage from "../components/Banner/Login.png";
-import LoginPage from "../components/login-page/LoginPage";
+import ResetEmail from "../components/resetPasswordEmail/ResetEmailPassword";
 import "./login.css";
 
-const Login = ({ supabase }) => {
+const ResetEmailPage = ({ supabase }) => {
   return (
     <div>
       <main className="main">
         <Banner path={loginimage} />
         <div className="divContentor">
-          <LoginPage supabase={supabase} />
+          <ResetEmail supabase={supabase} />
         </div>
       </main>
     </div>
   );
 };
 
-export default Login;
+export default ResetEmailPage;

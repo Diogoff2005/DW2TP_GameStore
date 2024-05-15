@@ -12,6 +12,17 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   console.log(email, password);
 
+  const passwordReset = async () => {
+    const { data, error } = await supabase.auth.resetPasswordForEmail(email);
+    if (error) {
+      console.log(error);
+      alert(error);
+    } else {
+      alert("Please check your email to reset the password!");
+      console.log(data);
+    }
+  };
+
   const handleLogin = async () => {
     try {
       setLoading(true);
@@ -60,10 +71,9 @@ const LoginPage = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></input>
-          <a href="" className="Forgotpassword">
-            {" "}
-            Forgot the password...
-          </a>
+          <Link className="link Forgotpassword" to="/resetEmail">
+            <a className="Forgotpassword"> Forgot the password...</a>
+          </Link>
           <Buttonsubmit
             textobutton={"Login"}
             loading={loading}
