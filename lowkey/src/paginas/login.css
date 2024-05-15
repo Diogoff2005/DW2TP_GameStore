@@ -1,12 +1,15 @@
-.boas {
+.main {
   position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.adeus {
+.divContentor {
+  margin-top: 2em;
   position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
   z-index: 2;
-  /* Add any specific styling for your LoginPage component */
 }

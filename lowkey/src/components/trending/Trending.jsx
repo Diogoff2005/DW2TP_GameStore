@@ -1,5 +1,5 @@
 import "./Trending.css";
-import Card from "../card/card";
+import Card from "../card/Card";
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 

@@ -6,7 +6,7 @@ const Banner = ({ path, name, price }) => {
       <img className="banner" src={path} alt="Banner" />
       <div>
         <div>
-          <h2>
+          <h2 className="bannerh2 ">
             {name} <br></br>
             <span className="bannerPrice">{price}</span>
           </h2>

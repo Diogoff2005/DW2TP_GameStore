@@ -13,7 +13,7 @@
   border-radius: 10px;
   margin-top: 20px;
   width: 390px;
-  height: 555px;
+  height: 110%;
   max-width: 400px;
   text-align: center;
 }
@@ -41,4 +41,11 @@
   font-size: 20px;
   text-align: left;
   font-weight: bold;
+}
+
+p {
+  color: red;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
 }

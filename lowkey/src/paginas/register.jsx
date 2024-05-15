@@ -7,12 +7,9 @@ import "./login.css";
 const Registerpage = () => {
   return (
     <div>
-      <nav>
-        <NavBar />
-      </nav>
-      <main className="boas">
-        <Banner path={loginimage} className="o" />
-        <div className="adeus">
+      <main className="main">
+        <Banner path={loginimage} />
+        <div className="divContentor">
           <Register />
         </div>
       </main>

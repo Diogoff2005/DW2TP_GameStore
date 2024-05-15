@@ -1,23 +1,19 @@
 import React from "react";
 import "./Buttonsubmit.css";
 // Button component
-const Button = ({ onClick, children, className }) => {
+const Button = ({ children, className, loading }) => {
   return (
-    <button onClick={onClick} className={className}>
+    <button type="submit" disabled={loading} className={className}>
       {children}
     </button>
   );
 };
 
-const Buttonsubmit = ({ textobutton, className }) => {
-  const handleClick = () => {
-    console.log("Button clicked!");
-  };
-
+const Buttonsubmit = ({ textobutton, className, loading }) => {
   return (
     <div>
-      <Button onClick={handleClick} className={`button ${className}`}>
-        {textobutton}
+      <Button className={`button ${className}`} disabled={loading}>
+        {loading ? "Loading..." : textobutton}
       </Button>
     </div>
   );

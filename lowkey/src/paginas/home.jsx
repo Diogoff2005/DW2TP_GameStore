@@ -1,4 +1,3 @@
-import NavBar from "../components/navBar/NavBar";
 import Banner from "../components/Banner/Banner";
 import Trending from "../components/trending/Trending";
 import bannerImage from "../components/Banner/banner.jpg";
