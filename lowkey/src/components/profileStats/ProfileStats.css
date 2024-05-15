@@ -1,0 +1,55 @@
+.grid-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+[class*="col-"] {
+  float: left;
+  min-height: 1px;
+  width: 16.66%;
+}
+
+.col-0-5 {
+  width: 5;
+}
+.col-1 {
+  width: 16.66%;
+}
+.col-1-5 {
+  width: 20%;
+}
+.col-2 {
+  width: 33.33%;
+}
+.col-3 {
+  width: 50%;
+}
+.col-4 {
+  width: 66.66%;
+}
+.col-5 {
+  width: 83.33%;
+}
+.col-6 {
+  width: 100%;
+}
+
+p {
+  color: White;
+  font-size: 20px;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+}
+
+.btnForm {
+  margin-top: 2%;
+}
