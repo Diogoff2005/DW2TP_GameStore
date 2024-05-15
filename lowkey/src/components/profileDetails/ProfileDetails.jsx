@@ -3,14 +3,14 @@ import "./ProfileDetails.css";
 const ProfileDetails = ({ PFP, username, email, creationDate, icon }) => {
   return (
     <>
-      <section className="profileDetails grid-container">
-        <div className="row">
-          <div className="col-1-5">
+      <section className=" grid-container">
+        <div className="row ">
+          <div className="col-1">
             <figure class="ProfilePFP circle ">
               <img class="ProfilePFP" src={PFP} alt="" />
             </figure>
           </div>
-          <div className="ProfileData col-3">
+          <div className="ProfileData col-4">
             <p>
               <strong>Account Username: </strong>
               {username} .
@@ -24,7 +24,7 @@ const ProfileDetails = ({ PFP, username, email, creationDate, icon }) => {
               {creationDate} .
             </p>
           </div>
-          <div className="ProfileIcon col-0-5">
+          <div className="ProfileIcon col-1" style={{ width: "45px" }}>
             <figure>
               <img className="editIcon" src={icon} alt="" />
             </figure>
