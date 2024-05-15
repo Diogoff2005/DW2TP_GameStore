@@ -1,31 +1,70 @@
-.variables {
-  font-family: Roboto;
-  font-size: 16px;
-
-  line-height: 18.75px;
-  text-align: left;
-}
-.all {
+.container {
   width: 656px;
-  height: 218px;
   background-color: #2d2d2d;
   border-radius: 15px;
-}
-.details {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  flex-direction: row;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .content {
-  width: 656px;
-  height: 74px;
-  color: white;
-  background-color: #494949;
   display: flex;
-  flex-wrap: nowrap;
   flex-direction: column;
+}
+
+.game-info {
+  display: flex;
   align-items: center;
-  border-radius:15px ;
+  padding: 16px;
+  background-color: #494949;
+}
+
+.info-text {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  margin: 0;
+  font-size: 24px;
+  flex-grow: 1;
+}
+
+.price {
+  font-size: 20px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.dropdown-button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.dropdown-button:hover {
+  color: #ccc;
+}
+
+.details {
+  background-color: #3d3d3d;
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detail-item {
+  flex: 1 1 48%;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.picture {
+
+
+
 }

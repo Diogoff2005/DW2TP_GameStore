@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./GameWithDetails.css";
 
 const GameWithDetails = ({
@@ -9,38 +9,49 @@ const GameWithDetails = ({
   publisher,
   genre,
   releaseDate,
-  key,
+  gameKey,
 }) => {
+  const [showDetails, setShowDetails] = useState(false);
+
+  const toggleDetails = () => {
+    setShowDetails(!showDetails);
+  };
+
   return (
-    <div className="all">
+    <div className="container">
       <div className="content">
-        <div className="game">
-          <img className="picture" src={picture} alt="picture" />
-          <h2 className="nome">{name}</h2>
-          <span className="price">{price}€</span>
-          <button className="number" name="dropdown" id="dropdown"></button>
+        <div className="game-info">
+          <img className="picture" src={picture} alt={name} />
+          <div className="info-text">
+            <h2 className="name">{name}</h2>
+            <span className="price">{price}€</span>
+          </div>
+          <button className="dropdown-button" onClick={toggleDetails}>
+            {showDetails ? "▲" : "▼"}
+          </button>
         </div>
-        <div className="details">
-          <h3 className="variables">
-            <strong>Publisher: </strong>
-            {publisher}
-          </h3>
-          <h3 className="variables">
-            <strong>Developer:</strong> {developer}
-          </h3>
-          <h3 className="variables">
-            <strong>Genre: </strong>
-            {genre}
-          </h3>
-          <h3 className="variables">
-            <strong>Release Date:</strong> {releaseDate}
-          </h3>
-          <h3 className="variables">
-            <strong> Key:</strong> {key}
-          </h3>
-        </div>
+        {showDetails && (
+          <div className="details">
+            <div className="detail-item">
+              <strong>Publisher:</strong> {publisher}
+            </div>
+            <div className="detail-item">
+              <strong>Developer:</strong> {developer}
+            </div>
+            <div className="detail-item">
+              <strong>Genre:</strong> {genre}
+            </div>
+            <div className="detail-item">
+              <strong>Release Date:</strong> {releaseDate}
+            </div>
+            <div className="detail-item">
+              <strong>Key:</strong> {gameKey}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 };
+
 export default GameWithDetails;
