@@ -1,23 +1,26 @@
-import imagem from "../card/GOW.jpg";
+import React from "react";
 import "./GamePage.css";
-const GamePage = ({ Gamename, Developer,Publisher,Genre,ReleaseDate,price }) => {
-  return (
-    <div
-      className="card grid-container"
-      style={{
-        background: `url(${imagem})`,
-        backgroundSize: `100%`,
-        minWidth: `460px`,
-        maxWidth: `460px`,
-      }}
-    >
-      <h2 className="GameName col-1">{Gamename}</h2>
-      <h2 className="price col-2">{Developer}</h2>
-      <h2 className="price col-3">{Publisher}</h2>
-      <h2 className="price col-4">{Genre}</h2>
-      <h2 className="price col-5">{ReleaseDate}</h2>
-      <h2 className="price col-6">{price}</h2>
+import gameImage from "../card/GOW.jpg";
+import Image from "../card/CART.svg";
 
+const GamePage = () => {
+  return (
+    <div className="game-card">
+      <div className="game-image">
+        <img src={gameImage} alt="God of War" />
+      </div>
+      <div className="game-details">
+        <h1 className="h1gamecard">God of War</h1>
+        <p>Developer: Santa Monica Studio</p>
+        <p>Publisher: PlayStation PC LLC</p>
+        <p>Genre: Action, Adventure, Single-player</p>
+        <p>Release Date: 14 Jan, 2022</p>
+
+        <button className="add-to-cart">
+          <img src={Image} alt="Cart" />
+          <p className="cartText">Add to Cart - 29.99€</p>
+        </button>
+      </div>
     </div>
   );
 };

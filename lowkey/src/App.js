@@ -8,7 +8,6 @@ import Cart from "../src/paginas/cart";
 import Profile from "../src/paginas/profile";
 import Favoritos from "../src/paginas/favoritos";
 import BackOffice from "../src/paginas/backOffice";
-import Cart from "../src/paginas/cart";
 import GamePage from "../src/paginas/game";
 
 function App() {
