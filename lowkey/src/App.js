@@ -27,23 +27,10 @@ function App() {
             <Route path="register" element={<Register />} />
             <Route path="resetEmail" element={<ResetEmailPage />} />
             <Route path="resetPassword" element={<ResetPasswordPage />} />
+            <Route path="game/:id" element={<GamePage />} />
           </Route>
         </Routes>
       </BrowserRouter>
-      {
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route element={<Home />} />
-              <Route path="profile" element={<Profile />} />
-              <Route path="favoritos" element={<Favoritos />} />
-              <Route path="cart" element={<Cart />} />
-              <Route path="/"element={<GamePage />} />
-              <Route path="game/:id" element={<GamePage />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      }
     </>
   );
 }
