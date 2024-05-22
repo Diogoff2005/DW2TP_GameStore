@@ -1,6 +1,6 @@
 .game-card {
   display: flex;
-  background: #ffffff;
+  /* background: #ffffff; */
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(99, 42, 42, 0.1);
@@ -51,7 +51,7 @@
   flex-direction: column;
   padding: 20px;
   justify-content: space-between;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(19, 19, 19, 0.7);
   color: rgb(0, 0, 0);
   border-radius: 20px;
 }

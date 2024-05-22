@@ -25,7 +25,9 @@ const Trending = () => {
       <div className="Trending ">
         <h2 className="Title">Trending</h2>
         {games.map((game) => (
-          <Card name={game.name} price={game.price} imagem={game.coverImg} />
+          <a key={game.id} href={`/game/${game.id}`} className="card-link">
+            <Card name={game.name} price={game.price} imagem={game.coverImg} />
+          </a>
         ))}
       </div>
     </>
