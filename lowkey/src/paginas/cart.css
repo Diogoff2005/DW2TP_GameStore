@@ -1,11 +1,14 @@
-.main {
-  max-width: 1200px;
-  margin: auto;
+h3 {
+  font-family: Roboto;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23.44px;
+  text-align: left;
+  margin-left: 60px;
 }
-.align{
-padding-bottom: 26px;
-
-
+.align {
+  padding-bottom: 26px;
 }
 
 .title {
@@ -16,9 +19,8 @@ padding-bottom: 26px;
   font-weight: 700;
   line-height: 42.19px;
   text-align: left;
-  
 }
-.Summary{
+.Summary {
   color: white;
   height: 42px;
   font-family: Roboto;

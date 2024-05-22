@@ -43,7 +43,7 @@
   width: 100%;
 }
 
-p {
+div .col-3 p {
   color: White;
   font-size: 20px;
   margin-top: 0.5%;

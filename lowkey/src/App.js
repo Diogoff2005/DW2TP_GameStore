@@ -28,6 +28,10 @@ function App() {
             <Route path="resetEmail" element={<ResetEmailPage />} />
             <Route path="resetPassword" element={<ResetPasswordPage />} />
             <Route path="game/:id" element={<GamePage />} />
+            <Route
+              path="cart"
+              element={<Cart />}
+            />
           </Route>
         </Routes>
       </BrowserRouter>
