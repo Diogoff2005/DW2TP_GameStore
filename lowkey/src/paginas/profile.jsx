@@ -1,13 +1,33 @@
 import ProfileDetails from "../components/profileDetails/ProfileDetails";
 import ProfileStats from "../components/profileStats/ProfileStats";
 import iCon from "../components/profileDetails/icon.png";
+import { supabase } from "../components/supabase";
+import { useState } from "react";
 
 const pFP = "https://i.redd.it/q8o37kcrenya1.jpg";
-const uSername = "Dinis Ferreira";
-const eMail = "dinisferira@gmail.com";
-const cReationDate = "69/12/2015";
 
 const Profile = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [creationDate, setCreateDate] = useState("");
+
+  const getData = async () => {
+    try {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (user) {
+        setUsername(user.user_metadata.username);
+        setEmail(user.user_metadata.email);
+        setCreateDate(user.created_at);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  getData();
+
   return (
     <>
       <main
@@ -19,9 +39,9 @@ const Profile = () => {
       >
         <ProfileDetails
           PFP={pFP}
-          username={uSername}
-          email={eMail}
-          creationDate={cReationDate}
+          username={username}
+          email={email}
+          creationDate={creationDate}
           icon={iCon}
         />
 

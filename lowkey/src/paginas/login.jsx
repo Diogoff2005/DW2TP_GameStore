@@ -5,14 +5,12 @@ import "./login.css";
 
 const Login = ({ supabase }) => {
   return (
-    <div>
-      <main className="main">
-        <Banner path={loginimage} />
-        <div className="divContentor">
-          <LoginPage supabase={supabase} />
-        </div>
-      </main>
-    </div>
+    <main className="main">
+      <Banner path={loginimage} />
+      <div className="divContentor">
+        <LoginPage supabase={supabase} />
+      </div>
+    </main>
   );
 };
 
