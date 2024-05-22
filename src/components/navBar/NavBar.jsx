@@ -18,7 +18,6 @@ const NavBar = () => {
           console.log(user);
           setSession(true);
           const isAdminUser = user.user_metadata && user.user_metadata.admin;
-          console.log(user.user_metadata);
           setIsAdmin(isAdminUser);
         } else {
           setSession(false);
