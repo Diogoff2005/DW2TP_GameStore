@@ -7,3 +7,12 @@ width: 187px;
 height: 53px;
 
 }
+.h3 {
+    font-family: Roboto;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23.44px;
+    text-align: left;
+    margin-left: 60px;
+  }

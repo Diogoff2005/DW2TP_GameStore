@@ -1,8 +1,10 @@
 import ProfileDetails from "../components/profileDetails/ProfileDetails";
 import ProfileStats from "../components/profileStats/ProfileStats";
+import GameWithDetails from "../components/GameWithDetails/GameWithDetails";
 import iCon from "../components/profileDetails/icon.png";
 import { supabase } from "../components/supabase";
 import { useState } from "react";
+import "./profile.css";
 
 const pFP = "https://i.redd.it/q8o37kcrenya1.jpg";
 
@@ -48,8 +50,40 @@ const Profile = () => {
           creationDate={creationDate}
           icon={iCon}
         />
+        <div className="profile">
+          <ProfileDetails
+            PFP={pFP}
+            username={uSername}
+            email={eMail}
+            creationDate={cReationDate}
+            icon={iCon}
+          />
 
-        <ProfileStats saved={1} avgSave={12} highSave={12} />
+          <h2 className="inText">Jogos comprados</h2>
+
+          <GameWithDetails
+            name="God of War"
+            picture={pFP}
+            price="yes"
+            developer="yes"
+            publisher="yes"
+            genre="yes"
+            releaseDate="disja"
+            gameKey="2134567890"
+          />
+          <GameWithDetails
+            name="God of War"
+            picture={pFP}
+            price="yes"
+            developer="yes"
+            publisher="yes"
+            genre="yes"
+            releaseDate="disja"
+            gameKey="2134567890"
+          />
+
+          <ProfileStats saved={1} avgSave={12} highSave={12} />
+        </div>
       </main>
     </>
   );

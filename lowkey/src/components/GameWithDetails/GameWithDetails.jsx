@@ -18,15 +18,15 @@ const GameWithDetails = ({
   };
 
   return (
-    <div className="container">
-      <div className="content">
+    <div className="container grid-container">
+      <div className="content row">
         <div className="game-info">
-          <img className="picture" src={picture} alt={name} />
-          <div className="info-text">
+          <img className="picture col-1" src={picture} alt={name} />
+          <div className="info-text col-4-5">
             <h2 className="name">{name}</h2>
             <span className="price">{price}€</span>
           </div>
-          <button className="dropdown-button" onClick={toggleDetails}>
+          <button className="dropdown-button col-1-55" onClick={toggleDetails}>
             {showDetails ? "▲" : "▼"}
           </button>
         </div>
