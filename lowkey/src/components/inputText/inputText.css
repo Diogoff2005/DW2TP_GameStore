@@ -1,0 +1,15 @@
+.inpuc {
+  display: flex;
+  flex-direction: column;
+}
+.inpuc label {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: white;
+}
+.inpuc input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}

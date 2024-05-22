@@ -1,4 +1,4 @@
-.gamesBackOffice {
+/* .gamesBackOffice {
   max-width: 1200px;
   margin: auto;
 }
@@ -20,4 +20,9 @@
 .divGame div {
   display: flex;
   justify-content: space-between;
+} */
+
+.backDiv {
+  display: flex;
+  justify-content: center;
 }
