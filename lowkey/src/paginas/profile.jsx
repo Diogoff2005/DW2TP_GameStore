@@ -43,19 +43,12 @@ const Profile = () => {
           padding: "0px",
         }}
       >
-        <ProfileDetails
-          PFP={pFP}
-          username={username}
-          email={email}
-          creationDate={creationDate}
-          icon={iCon}
-        />
         <div className="profile">
           <ProfileDetails
             PFP={pFP}
-            username={uSername}
-            email={eMail}
-            creationDate={cReationDate}
+            username={username}
+            email={email}
+            creationDate={creationDate}
             icon={iCon}
           />
 
