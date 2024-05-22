@@ -19,7 +19,11 @@ const Profile = () => {
       if (user) {
         setUsername(user.user_metadata.username);
         setEmail(user.user_metadata.email);
-        setCreateDate(user.created_at);
+        const dateTimeString = "2024-05-08T09:05:57.337606Z";
+        const dateString = dateTimeString.substring(0, 10);
+        const [year, month, day] = dateString.split("-");
+        const formattedDate = `${day}-${month}-${year}`;
+        setCreateDate(formattedDate);
       }
     } catch (error) {
       console.log(error);

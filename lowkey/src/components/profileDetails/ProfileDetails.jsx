@@ -7,7 +7,7 @@ const ProfileDetails = ({ PFP, username, email, creationDate, icon }) => {
         <div className="row ">
           <div className="col-1">
             <figure class="ProfilePFP circle ">
-              <img class="ProfilePFP" src={PFP} alt="" />
+              <img className="ProfilePFP" src={PFP} alt="" />
             </figure>
           </div>
           <div className="ProfileData col-4">
