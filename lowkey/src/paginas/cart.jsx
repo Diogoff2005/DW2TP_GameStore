@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import "./cart.css";
 
 const Cart = () => {
+  const navigate = useNavigate();
   const [cart, setCart] = useState([]);
   const [games, setGames] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -75,10 +76,11 @@ const Cart = () => {
       const {
         data: { user },
       } = await supabase.auth.getUser();
-
+      if (!user) {
+        alert("Please login to purchase a game.");
+        throw "Please login to purchase a game.";
+      }
       const insertPromises = games.map(async (game) => {
-        console.log(game.id);
-        console.log(user.id);
         const { error } = await supabase
           .from("userGames")
           .insert({ idUser: user.id, idGame: game.id });
@@ -91,6 +93,7 @@ const Cart = () => {
 
       alert("Bought successfully. Game On!");
       sessionStorage.removeItem("cart");
+      navigate("/");
     } catch (error) {
       console.error("Error submitting cart:", error.message);
     }
@@ -126,7 +129,7 @@ const Cart = () => {
                 <form onSubmit={handleSubmit}>
                   <Buttonsubmit
                     className={"Payment"}
-                    textobutton={"Go to payment"}
+                    textobutton={"Purchase Games"}
                   ></Buttonsubmit>
                 </form>
               </div>

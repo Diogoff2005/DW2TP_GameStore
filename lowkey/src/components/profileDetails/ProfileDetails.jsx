@@ -13,15 +13,15 @@ const ProfileDetails = ({ PFP, username, email, creationDate, icon }) => {
           <div className="ProfileData col-4">
             <p>
               <strong>Account Username: </strong>
-              {username} .
+              {username}
             </p>
             <p>
               <strong>Email: </strong>
-              {email} .
+              {email}
             </p>
             <p>
               <strong>Data de Criação: </strong>
-              {creationDate} .
+              {creationDate}
             </p>
           </div>
           <div className="ProfileIcon col-0-5" style={{ width: "15%" }}>
