@@ -3,6 +3,8 @@ import GameInCard from "../components/GameInCard/GameInCard";
 import CartCounter from "../components/CartCounter/CartCounter";
 import { supabase } from "../components/supabase";
 import Buttonsubmit from "../components/Buttonsubmit/Buttonsubmit";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./cart.css";
 
 const Cart = () => {
@@ -70,14 +72,13 @@ const Cart = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Get the user data
-      const { user, error: userError } = await supabase.auth.getUser();
-      if (userError) {
-        throw userError;
-      }
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
 
-      // Insert each game from the cart for the current user
       const insertPromises = games.map(async (game) => {
+        console.log(game.id);
+        console.log(user.id);
         const { error } = await supabase
           .from("userGames")
           .insert({ idUser: user.id, idGame: game.id });
@@ -86,10 +87,9 @@ const Cart = () => {
         }
       });
 
-      // Wait for all insertions to complete
       await Promise.all(insertPromises);
 
-      console.log("Bought successfully. Game On!");
+      alert("Bought successfully. Game On!");
       sessionStorage.removeItem("cart");
     } catch (error) {
       console.error("Error submitting cart:", error.message);
@@ -130,10 +130,12 @@ const Cart = () => {
                   ></Buttonsubmit>
                 </form>
               </div>
-              <Buttonsubmit
-                className={"Shopping"}
-                textobutton={"Continue Shopping"}
-              ></Buttonsubmit>
+              <Link to="/">
+                <Buttonsubmit
+                  className={"Shopping"}
+                  textobutton={"Continue Shopping"}
+                ></Buttonsubmit>
+              </Link>
             </div>
           </div>
         </div>

@@ -51,11 +51,6 @@ const NavBar = () => {
           </li>
         )}
         <li className="iconLi">
-          <Link className="link" to="/favoritos">
-            <span className="material-icons icon">star</span>
-          </Link>
-        </li>
-        <li className="iconLi">
           <Link className="link" to="/cart">
             <span className="material-icons icon">shopping_cart</span>
           </Link>

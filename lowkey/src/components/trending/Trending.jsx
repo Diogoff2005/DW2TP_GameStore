@@ -18,6 +18,7 @@ const Trending = () => {
   async function getGames() {
     const { data } = await supabase.from("games").select();
     setGames(data);
+    console.log(games);
   }
 
   return (
@@ -25,7 +26,12 @@ const Trending = () => {
       <div className="Trending ">
         <h2 className="Title">Trending</h2>
         {games.map((game) => (
-          <Card id={game.id} name={game.name} price={game.price} imagem={game.coverImg} />
+          <Card
+            id={game.id}
+            name={game.name}
+            price={game.price}
+            imagem={game.coverImg}
+          />
         ))}
       </div>
     </>

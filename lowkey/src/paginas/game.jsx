@@ -5,14 +5,20 @@ import { supabase } from "../components/supabase";
 
 const Game = () => {
   const [gameData, setGameData] = useState({});
-
-  const url = window.location.href;
-  const match = url.match(/\/game\/(\d+)/);
-  const id = match ? match[1] : null;
+  const [id, setId] = useState(null);
 
   useEffect(() => {
+    const url = window.location.href;
+    const match = url.match(/\/game\/([0-9a-fA-F-]+)/);
+    if (match) {
+      setId(match[1]);
+    } else {
+      console.error("No game ID found in the URL");
+    }
+
     const fetchGameData = async () => {
       if (id) {
+        console.log(typeof id);
         const { data, error } = await supabase
           .from("games")
           .select("*")

@@ -54,6 +54,7 @@ const Profile = () => {
 
           <h2 className="inText">Jogos comprados</h2>
 
+          {}
           <GameWithDetails
             name="God of War"
             picture={pFP}
