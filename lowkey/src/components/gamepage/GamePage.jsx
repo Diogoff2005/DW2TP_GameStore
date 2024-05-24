@@ -1,8 +1,10 @@
 import React from "react";
 import "./GamePage.css";
 import Image from "../card/CART.svg";
+import { useState, useEffect } from "react";
 
 const GamePage = ({
+  id,
   name,
   developer,
   publisher,
@@ -11,6 +13,19 @@ const GamePage = ({
   price,
   gameImg,
 }) => {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (id) => {
+    if (!cart.includes(id)) {
+      const newCart = [...cart, id];
+      setCart(newCart);
+      sessionStorage.setItem("cart", JSON.stringify(newCart));
+      alert(name + " was added to your cart!");
+    } else {
+      alert("Item is already in the cart");
+    }
+  };
+
   return (
     <div className="game-card">
       <div className="game-image">
@@ -23,7 +38,12 @@ const GamePage = ({
         <p>Genre: {genre}</p>
         <p>Release Date: {releaseDate}</p>
 
-        <button className="add-to-cart">
+        <button
+          className="add-to-cart"
+          onClick={() => {
+            addToCart(id);
+          }}
+        >
           <img src={Image} alt="Cart" />
           <p className="cartText">Add to Cart - {price}€</p>
         </button>

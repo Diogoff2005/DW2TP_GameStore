@@ -31,7 +31,8 @@ const Game = () => {
 
   return id ? (
     <GamePage
-      gameName={gameData.name}
+      id={gameData.id}
+      name={gameData.name}
       developer={gameData.developer}
       publisher={gameData.publisher}
       genre={gameData.genre}
