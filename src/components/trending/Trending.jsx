@@ -18,6 +18,7 @@ const Trending = () => {
   async function getGames() {
     const { data } = await supabase.from("games").select();
     setGames(data);
+    console.log(games);
   }
 
   return (

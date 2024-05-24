@@ -1,9 +1,9 @@
+import React, { useState, useEffect } from "react";
 import ProfileDetails from "../components/profileDetails/ProfileDetails";
 import ProfileStats from "../components/profileStats/ProfileStats";
 import GameWithDetails from "../components/GameWithDetails/GameWithDetails";
 import iCon from "../components/profileDetails/icon.png";
 import { supabase } from "../components/supabase";
-import { useState } from "react";
 import "./profile.css";
 
 const pFP = "https://i.redd.it/q8o37kcrenya1.jpg";
@@ -12,6 +12,41 @@ const Profile = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [creationDate, setCreateDate] = useState("");
+  const [games, setGames] = useState([]);
+
+  const fetchGameData = async (userId) => {
+    if (userId) {
+      const { data, error } = await supabase
+        .from("userGames")
+        .select(
+          `
+          id,
+          idGame,
+          games (
+            name,
+            coverImg,
+            price,
+            developer,
+            publisher,
+            genre,
+            releaseDate
+          )
+        `
+        )
+        .eq("idUser", userId);
+      if (error) {
+        console.error("Error fetching data:", error);
+      } else {
+        console.log(data);
+        const gamesData = data.map((item) => ({
+          userGameId: item.id,
+          ...item.games,
+        }));
+        console.log(gamesData);
+        setGames(gamesData);
+      }
+    }
+  };
 
   const getData = async () => {
     try {
@@ -21,64 +56,54 @@ const Profile = () => {
       if (user) {
         setUsername(user.user_metadata.username);
         setEmail(user.user_metadata.email);
-        const dateTimeString = "2024-05-08T09:05:57.337606Z";
+        const dateTimeString = user.created_at; // Use user's actual creation date
         const dateString = dateTimeString.substring(0, 10);
         const [year, month, day] = dateString.split("-");
         const formattedDate = `${day}-${month}-${year}`;
         setCreateDate(formattedDate);
+        fetchGameData(user.id);
       }
     } catch (error) {
       console.log(error);
     }
   };
 
-  getData();
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
-    <>
-      <main
-        style={{
-          marginleft: "auto",
-          marginRight: "auto",
-          padding: "0px",
-        }}
-      >
-        <div className="profile">
-          <ProfileDetails
-            PFP={pFP}
-            username={username}
-            email={email}
-            creationDate={creationDate}
-            icon={iCon}
-          />
-
-          <h2 className="inText">Jogos comprados</h2>
-
+    <main
+      style={{
+        marginLeft: "auto",
+        marginRight: "auto",
+        padding: "0px",
+      }}
+    >
+      <div className="profile">
+        <ProfileDetails
+          PFP={pFP}
+          username={username}
+          email={email}
+          creationDate={creationDate}
+          icon={iCon}
+        />
+        <h2 className="inText">Jogos comprados</h2>
+        {games.map((game) => (
           <GameWithDetails
-            name="God of War"
-            picture={pFP}
-            price="yes"
-            developer="yes"
-            publisher="yes"
-            genre="yes"
-            releaseDate="disja"
-            gameKey="2134567890"
+            name={game.name}
+            picture={game.coverImg}
+            price={game.price}
+            developer={game.developer}
+            publisher={game.publisher}
+            genre={game.genre}
+            releaseDate={game.releaseDate}
+            gameKey={game.userGameId}
           />
-          <GameWithDetails
-            name="God of War"
-            picture={pFP}
-            price="yes"
-            developer="yes"
-            publisher="yes"
-            genre="yes"
-            releaseDate="disja"
-            gameKey="2134567890"
-          />
-
-          <ProfileStats saved={1} avgSave={12} highSave={12} />
-        </div>
-      </main>
-    </>
+        ))}
+        <ProfileStats saved={1} avgSave={12} highSave={12} />
+      </div>
+    </main>
   );
 };
 
