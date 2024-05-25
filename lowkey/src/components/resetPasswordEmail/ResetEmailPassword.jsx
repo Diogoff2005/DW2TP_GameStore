@@ -12,7 +12,7 @@ const ResetEmail = () => {
   const passwordReset = async () => {
     setLoading(true);
     const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: "http://localhost:3000/resetPassword",
+      redirectTo: "https://lowkey-six.vercel.app/resetPassword",
     });
     if (error) {
       console.log(error);
