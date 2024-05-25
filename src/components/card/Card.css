@@ -1,10 +1,8 @@
 .card {
-  /* Rectangle 10 */
   display: flex;
   align-items: end;
   justify-content: space-around;
-  max-width: 460px;
-  width: 100%;
+  width: 460px;
   height: 250px;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -23,10 +21,9 @@
   box-sizing: border-box;
 }
 
-.grid-container {
+.grid-containerCard {
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
   max-width: 1200px;
 }
 
@@ -69,4 +66,24 @@
 
   width: fit-content;
   padding-right: 22px;
+}
+
+@media (max-width: 640px) {
+  .card {
+    width: 230px;
+    height: 125px;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  .card h2 {
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-size: 1em;
+    margin-left: 8px;
+    margin-bottom: 15px;
+  }
 }

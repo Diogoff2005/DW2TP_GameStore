@@ -8,7 +8,7 @@
   width: 100%;
   padding: 0px;
   margin: 0px;
-  max-height: 503px;
+  height: 30em;
 }
 
 .bannerFigure div {
@@ -31,4 +31,19 @@
 
 .bannerPrice {
   font-size: 2.5vw;
+}
+
+@media (max-width: 700px) {
+  .banner {
+    height: 15em;
+  }
+}
+
+@media (max-width: 450px) {
+  .bannerh2 {
+    font-size: 7vw;
+  }
+  .bannerPrice {
+    font-size: 5vw;
+  }
 }

@@ -5,12 +5,7 @@ import bannerImage from "../components/Banner/banner.jpg";
 const Home = () => {
   return (
     <>
-      <main
-        style={{
-          margin: "0px",
-          padding: "0px",
-        }}
-      >
+      <main>
         <Banner
           path={bannerImage}
           name={"God of War"}

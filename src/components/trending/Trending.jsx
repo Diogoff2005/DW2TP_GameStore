@@ -1,6 +1,7 @@
 import "./Trending.css";
 import Card from "../card/Card";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
@@ -9,11 +10,12 @@ const supabase = createClient(
 );
 
 const Trending = () => {
+  const location = useLocation();
   const [games, setGames] = useState([]);
 
   useEffect(() => {
     getGames();
-  }, []);
+  }, [location]);
 
   async function getGames() {
     const { data } = await supabase.from("games").select();
