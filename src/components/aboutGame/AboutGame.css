@@ -9,14 +9,15 @@
 
 .gameRequirements {
   display: flex;
+  gap: 1;
 }
 
 .gameRequirement {
   flex: 1;
+  margin: 6px;
 }
 
 .gameRequirement h3 {
   margin-left: 0;
   font-weight: 500;
-  flex: 1;
 }

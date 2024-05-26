@@ -29,7 +29,7 @@ const GamePage = ({
   return (
     <div className="gameContent">
       <div className="game-image">
-        <img src={gameImg} alt="God of War" />
+        <img src={gameImg} alt={name} />
       </div>
       <div className="game-details">
         <h1 className="h1gamecard">{name}</h1>
