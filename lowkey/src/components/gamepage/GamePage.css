@@ -14,7 +14,7 @@
 }
 
 .game-image {
-  width: 40%;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,7 +47,7 @@
 }
 
 .game-details {
-  flex: 0.6; /* Reduzido para acomodar o espaço ocupado pelo botão */
+  flex: 1; /* Reduzido para acomodar o espaço ocupado pelo botão */
   margin: 20px;
   display: flex;
   flex-direction: column;
