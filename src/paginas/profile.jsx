@@ -3,10 +3,9 @@ import ProfileDetails from "../components/profileDetails/ProfileDetails";
 import ProfileStats from "../components/profileStats/ProfileStats";
 import GameWithDetails from "../components/GameWithDetails/GameWithDetails";
 import iCon from "../components/profileDetails/icon.png";
+import pfc from "../components/profileDetails/icon.jpg";
 import { supabase } from "../components/supabase";
 import "./profile.css";
-
-const pFP = "https://i.redd.it/q8o37kcrenya1.jpg";
 
 const Profile = () => {
   const [username, setUsername] = useState("");
@@ -82,7 +81,7 @@ const Profile = () => {
     >
       <div className="profile">
         <ProfileDetails
-          PFP={pFP}
+          PFP={pfc}
           username={username}
           email={email}
           creationDate={creationDate}
