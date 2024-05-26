@@ -88,7 +88,7 @@ const Profile = () => {
           creationDate={creationDate}
           icon={iCon}
         />
-        <h2 className="inText">Jogos comprados</h2>
+        <h2 className="inText">Owned Games</h2>
         {games.map((game) => (
           <GameWithDetails
             name={game.name}

@@ -20,7 +20,7 @@ const ProfileDetails = ({ PFP, username, email, creationDate, icon }) => {
               {email}
             </p>
             <p>
-              <strong>Data de Criação: </strong>
+              <strong>Creation Date: </strong>
               {creationDate}
             </p>
           </div>
