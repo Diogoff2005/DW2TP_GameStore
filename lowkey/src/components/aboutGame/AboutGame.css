@@ -1,0 +1,22 @@
+.aboutGameDiv {
+  width: 100%;
+  color: white;
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  margin: 2em 0;
+}
+
+.gameRequirements {
+  display: flex;
+}
+
+.gameRequirement {
+  flex: 1;
+}
+
+.gameRequirement h3 {
+  margin-left: 0;
+  font-weight: 500;
+  flex: 1;
+}

@@ -1,12 +1,16 @@
-.game-card {
+.gameContent {
   display: flex;
-  /* background: #ffffff; */
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(99, 42, 42, 0.1);
   font-family: Arial, sans-serif;
-  align-items: stretch;
-  flex-direction: row; /* Alteração para dispor os elementos lado a lado */
+  justify-content: center;
+  margin-top: 10%;
+  z-index: 2;
+  position: absolute;
 }
 
 .game-image {
@@ -44,14 +48,12 @@
 
 .game-details {
   flex: 0.6; /* Reduzido para acomodar o espaço ocupado pelo botão */
-  margin-left: 40px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   padding: 20px;
   justify-content: space-between;
-  background: rgba(19, 19, 19, 0.7);
+  background: rgba(19, 19, 19, 0.8);
   color: rgb(0, 0, 0);
   border-radius: 20px;
 }
@@ -88,5 +90,4 @@
 
 .cartText {
   font-size: 12px;
-  
 }
