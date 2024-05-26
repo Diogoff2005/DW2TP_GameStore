@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./GamePage.css";
 import Image from "../card/CART.svg";
-import { useState, useEffect } from "react";
 
 const GamePage = ({
   id,
@@ -14,6 +13,13 @@ const GamePage = ({
   gameImg,
 }) => {
   const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    const storedCart = sessionStorage.getItem("cart");
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    }
+  }, []);
 
   const addToCart = (id) => {
     if (!cart.includes(id)) {

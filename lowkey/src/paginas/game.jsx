@@ -28,7 +28,7 @@ const Game = () => {
           .from("games")
           .select("*")
           .eq("id", id)
-          .single(); // Ensure that we get a single object, not an array
+          .single();
         if (error) {
           console.error("Error fetching data:", error);
         } else {
