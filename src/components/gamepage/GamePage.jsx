@@ -27,7 +27,7 @@ const GamePage = ({
   };
 
   return (
-    <div className="game-card">
+    <div className="gameContent">
       <div className="game-image">
         <img src={gameImg} alt="God of War" />
       </div>
