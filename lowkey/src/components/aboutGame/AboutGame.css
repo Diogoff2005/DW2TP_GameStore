@@ -21,3 +21,24 @@
   margin-left: 0;
   font-weight: 500;
 }
+
+@media only screen and (max-width: 600px) {
+  .aboutGameDiv {
+    position: relative;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-top: 100%;
+  }
+
+  .aboutGameDiv p {
+    font-size: 0.7em;
+  }
+
+  .gameRequirement h3 {
+    font-size: 1em;
+  }
+
+  .gameRequirement p {
+    font-size: 0.7em;
+  }
+}
