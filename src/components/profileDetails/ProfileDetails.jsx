@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./ProfileDetails.css";
 import { supabase } from "../supabase";
+import { useNavigate } from "react-router-dom";
 
 const ProfileDetails = ({ PFP, username, email, creationDate, icon }) => {
   const [profilePic, setProfilePic] = useState(PFP);
+  const [showPopup, setShowPopup] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserProfilePic = async () => {
@@ -87,6 +90,50 @@ const ProfileDetails = ({ PFP, username, email, creationDate, icon }) => {
     }
   };
 
+  const handleProfileIconClick = () => {
+    setShowPopup(true);
+  };
+
+  const handleConfirmDeletion = async () => {
+    const { data: userData, error: userError } = await supabase.auth.getUser();
+    const user = userData?.user;
+
+    if (user && user.user_metadata && user.user_metadata.profilePic) {
+      const { error: deleteError } = await supabase.storage
+        .from("Imgs")
+        .remove([user.user_metadata.profilePic]);
+
+      if (deleteError) {
+        console.error("Error deleting file:", deleteError);
+        return;
+      }
+
+      const { error: updateError } = await supabase.auth.updateUser({
+        data: { profilePic: null },
+      });
+
+      if (updateError) {
+        console.error("Error updating user metadata:", updateError);
+      } else {
+        setProfilePic(null);
+        setShowPopup(false);
+        console.log("Profile picture deleted successfully");
+      }
+    }
+
+    const { data, error } = await supabase.auth.admin.deleteUser(user.id);
+    if (error) {
+      console.error(error);
+    } else {
+      console.log(data);
+      navigate("/login");
+    }
+  };
+
+  const handleCancelDeletion = () => {
+    setShowPopup(false);
+  };
+
   return (
     <>
       <section className="grid-container wit">
@@ -124,13 +171,32 @@ const ProfileDetails = ({ PFP, username, email, creationDate, icon }) => {
               {creationDate}
             </p>
           </div>
-          <div className="ProfileIcon col-0-5" style={{ width: "15%" }}>
+          <div
+            className="ProfileIcon col-0-5"
+            style={{ width: "15%" }}
+            onClick={handleProfileIconClick}
+          >
             <figure>
               <img className="editIcon" src={icon} alt="Edit Icon" />
             </figure>
           </div>
         </div>
       </section>
+
+      {showPopup && (
+        <div className="popup">
+          <div className="popup-inner">
+            <h2>Confirm Deletion</h2>
+            <p>Are you sure you want to delete your account?</p>
+            <button className="button" onClick={handleConfirmDeletion}>
+              Yes
+            </button>
+            <button className="button" onClick={handleCancelDeletion}>
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };
