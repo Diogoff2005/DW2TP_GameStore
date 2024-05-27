@@ -5,52 +5,10 @@
   margin-top: 2%;
 }
 
-.row:before,
-.row:after {
-  content: "";
+.rowProfile {
   display: flex;
-  clear: both;
-  max-width: 800px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-[class*="col-"] {
-  float: left;
-  min-height: 1px;
-  width: 16.66%;
-}
-
-.col-0-5 {
-  width: 5%;
-}
-.col-1 {
-  width: 16.66%;
-}
-.col-1-5 {
-  width: 20%;
-}
-.col-2 {
-  width: 33.33%;
-}
-.col-3 {
-  width: 50%;
-}
-.col-4 {
-  width: 66.66%;
-}
-.col-5 {
-  width: 83.33%;
-}
-.col-6 {
-  width: 100%;
-}
-.circle {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-  position: relative;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .circle img {
@@ -69,15 +27,13 @@ figure {
   background-color: #3f3f3f;
   min-height: 200px;
   height: 190px;
+  width: 70%;
   border-radius: 26px;
   padding-left: 45px;
+  padding-right: 45px;
   padding-top: 2.5%;
-
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: 1%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   p {
     color: white;
     font-size: 20px;
@@ -97,6 +53,9 @@ figure {
 }
 
 .ProfilePFP {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
   position: relative;
   display: inline-block;
 }
@@ -149,4 +108,35 @@ figure {
 
 .popup-inner button {
   margin: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .ProfileData {
+    background-color: #3f3f3f;
+    min-height: 200px;
+    width: 85%;
+    border-radius: 26px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    p {
+      color: white;
+      font-size: 15px;
+      margin-bottom: 26px;
+    }
+  }
+
+  .ProfileIcon {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .editIcon {
+    width: 50px;
+  }
 }

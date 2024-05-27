@@ -119,3 +119,31 @@
   max-height: 60px;
   max-width: 106px;
 }
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 85%;
+    background-color: #2d2d2d;
+    border-radius: 15px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .name {
+    margin: 0;
+    font-size: 15px;
+    flex-grow: 1;
+  }
+
+  .picture {
+    margin: auto;
+  }
+
+  .price {
+    font-size: 15px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
