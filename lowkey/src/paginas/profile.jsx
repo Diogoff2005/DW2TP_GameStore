@@ -55,7 +55,7 @@ const Profile = () => {
       if (user) {
         setUsername(user.user_metadata.username);
         setEmail(user.user_metadata.email);
-        const dateTimeString = user.created_at; // Use user's actual creation date
+        const dateTimeString = user.created_at;
         const dateString = dateTimeString.substring(0, 10);
         const [year, month, day] = dateString.split("-");
         const formattedDate = `${day}-${month}-${year}`;
