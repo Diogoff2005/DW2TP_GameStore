@@ -39,3 +39,35 @@ select.number {
 select.number option {
   font-size: 15px;
 }
+
+.divPrecoQuantidade {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .cardGrid-container {
+    margin: auto;
+    width: 80%;
+    height: 74px;
+  }
+
+  .picture {
+    width: 80px;
+    height: 40px;
+    border-radius: 14px;
+    align-self: flex-start;
+  }
+
+  .nome {
+    padding-left: 10px;
+  }
+
+  .divPrecoQuantidade {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .price {
+    padding-right: 0px;
+  }
+}

@@ -14,21 +14,23 @@ const GameInCard = ({ picture, name, price, quantity, onQuantityChange }) => {
         <h2 className="nome">{name}</h2>
       </div>
       <div>
-        <div style={{ display: "flex" }}>
+        <div className="divPrecoQuantidade">
           <span className="price">${price.toFixed(2)}</span>
-          <select
-            className="number"
-            name="dropdown"
-            id="dropdown"
-            value={quantity}
-            onChange={handleSelectChange}
-          >
-            {[...Array(10).keys()].map((i) => (
-              <option className="option" key={i + 1} value={i + 1}>
-                {i + 1}
-              </option>
-            ))}
-          </select>
+          <div>
+            <select
+              className="number"
+              name="dropdown"
+              id="dropdown"
+              value={quantity}
+              onChange={handleSelectChange}
+            >
+              {[...Array(10).keys()].map((i) => (
+                <option className="option" key={i + 1} value={i + 1}>
+                  {i + 1}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
     </div>

@@ -78,7 +78,7 @@
   clear: both;
 }
 
-[class*="col-"] {
+.game-info [class*="col-"] {
   float: left;
   min-height: 1px;
   width: 16.66%;
@@ -95,9 +95,6 @@
 }
 .col-2 {
   width: 33.33%;
-}
-.col-3 {
-  width: 50%;
 }
 .col-4 {
   width: 66.66%;

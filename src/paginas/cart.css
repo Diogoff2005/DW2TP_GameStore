@@ -61,7 +61,7 @@ h3 {
 .col-2 {
   width: 33.33%;
 }
-.col-3 {
+.col-3Cart {
   width: 50%;
 }
 .col-4 {
@@ -72,4 +72,15 @@ h3 {
 }
 .col-6 {
   width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .titleCart {
+    margin-bottom: 0;
+    margin-left: 58px;
+  }
+
+  .col-3Cart {
+    width: 100%;
+  }
 }
