@@ -105,13 +105,13 @@ const Cart = () => {
   return (
     <main className="main">
       <div className="grid-container">
-        <h2 className="title col-3">Cart</h2>
-        <div className="col-3">
+        <h2 className="title titleCart col-3Cart">Cart</h2>
+        <div className="col-3Cart">
           <h2 className="Summary">Summary</h2>
         </div>
         <div className="cart row grid-container">
           <div className="row">
-            <div className="col-3">
+            <div className="col-3Cart">
               {games.map((game) => (
                 <div className="cartcontent row" key={game.id}>
                   <GameInCard
@@ -126,7 +126,7 @@ const Cart = () => {
                 </div>
               ))}
             </div>
-            <div className="col-3">
+            <div className="col-3Cart">
               <CartCounter offPrice={totalPrice.toFixed(2)} discounts={"0"} />
               <div className="align">
                 <form onSubmit={handleSubmit}>

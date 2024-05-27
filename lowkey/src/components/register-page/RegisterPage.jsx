@@ -30,7 +30,7 @@ const RegisterPage = () => {
               data: {
                 username: username,
                 photo: null,
-                admin: false,
+                admin: true,
               },
             },
           });
