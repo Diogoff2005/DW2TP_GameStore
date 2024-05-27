@@ -80,14 +80,17 @@ const Cart = () => {
         alert("Please login to purchase a game.");
         throw "Please login to purchase a game.";
       }
-      const insertPromises = games.map(async (game) => {
-        const { error } = await supabase
-          .from("userGames")
-          .insert({ idUser: user.id, idGame: game.id });
-        if (error) {
-          throw error;
-        }
-      });
+
+      const insertPromises = games.flatMap((game) =>
+        Array.from({ length: game.quantity }).map(async () => {
+          const { error } = await supabase
+            .from("userGames")
+            .insert({ idUser: user.id, idGame: game.id });
+          if (error) {
+            throw error;
+          }
+        })
+      );
 
       await Promise.all(insertPromises);
 
