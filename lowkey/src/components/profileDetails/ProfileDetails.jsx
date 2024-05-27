@@ -137,8 +137,8 @@ const ProfileDetails = ({ PFP, username, email, creationDate, icon }) => {
   return (
     <>
       <section className="grid-container wit">
-        <div className="row">
-          <div className="col-1">
+        <div className="rowProfile">
+          <div className="profileDiv">
             <figure className="ProfilePFP circle">
               <img
                 className="ProfilePFP"
@@ -157,28 +157,26 @@ const ProfileDetails = ({ PFP, username, email, creationDate, icon }) => {
               </label>
             </figure>
           </div>
-          <div className="ProfileData col-4">
-            <p>
-              <strong>Account Username: </strong>
-              {username}
-            </p>
-            <p>
-              <strong>Email: </strong>
-              {email}
-            </p>
-            <p>
-              <strong>Creation Date: </strong>
-              {creationDate}
-            </p>
-          </div>
-          <div
-            className="ProfileIcon col-0-5"
-            style={{ width: "15%" }}
-            onClick={handleProfileIconClick}
-          >
-            <figure>
-              <img className="editIcon" src={icon} alt="Edit Icon" />
-            </figure>
+          <div className="ProfileData">
+            <div>
+              <p>
+                <strong>Account Username: </strong>
+                {username}
+              </p>
+              <p>
+                <strong>Email: </strong>
+                {email}
+              </p>
+              <p>
+                <strong>Creation Date: </strong>
+                {creationDate}
+              </p>
+            </div>
+            <div className="ProfileIcon " onClick={handleProfileIconClick}>
+              <figure>
+                <img className="editIcon" src={icon} alt="Edit Icon" />
+              </figure>
+            </div>
           </div>
         </div>
       </section>

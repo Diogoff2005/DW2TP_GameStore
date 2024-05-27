@@ -53,3 +53,10 @@ div .col-3 p {
 .btnForm {
   margin-top: 2%;
 }
+
+@media only screen and (max-width: 600px) {
+  .btnForm {
+    margin-top: 2em;
+    margin-left: 10%;
+  }
+}
