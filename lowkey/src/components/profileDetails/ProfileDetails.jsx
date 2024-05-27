@@ -34,36 +34,54 @@ const ProfileDetails = ({ PFP, username, email, creationDate, icon }) => {
   const handleProfilePicChange = async (event) => {
     const file = event.target.files[0];
     if (file) {
+      const { data: userData, error: userError } =
+        await supabase.auth.getUser();
+      const user = userData?.user;
+
+      if (userError) {
+        console.error("Error fetching user:", userError);
+        return;
+      }
+
+      // Delete the existing profile picture if it exists
+      if (user && user.user_metadata && user.user_metadata.profilePic) {
+        const { error: deleteError } = await supabase.storage
+          .from("Imgs")
+          .remove([user.user_metadata.profilePic]);
+
+        if (deleteError) {
+          console.error("Error deleting file:", deleteError);
+          return;
+        }
+      }
+
+      // Upload the new profile picture
+      const fileName = `${Date.now()}-${file.name}`;
+      const { data, error: uploadError } = await supabase.storage
+        .from("Imgs")
+        .upload(fileName, file);
+
+      if (uploadError) {
+        console.error("Error uploading file:", uploadError);
+        return;
+      }
+
       const reader = new FileReader();
       reader.onloadend = () => {
         setProfilePic(reader.result);
       };
       reader.readAsDataURL(file);
 
-      const fileName = `${Date.now()}-${file.name}`;
-      const { data, error: uploadError } = await supabase.storage
-        .from("Imgs")
-        .upload(`${fileName}`, file);
+      // Update user metadata with the new profile picture
+      if (user) {
+        const { error: updateError } = await supabase.auth.updateUser({
+          data: { profilePic: fileName },
+        });
 
-      if (uploadError) {
-        console.error("Error uploading file:", uploadError);
-      } else {
-        const { data: userData, error: userError } =
-          await supabase.auth.getUser();
-        const user = userData?.user;
-
-        if (userError) {
-          console.error("Error fetching user:", userError);
-        } else if (user) {
-          const { error: updateError } = await supabase.auth.updateUser({
-            data: { profilePic: `${fileName}` },
-          });
-
-          if (updateError) {
-            console.error("Error updating user metadata:", updateError);
-          } else {
-            console.log("Picture changed successfully");
-          }
+        if (updateError) {
+          console.error("Error updating user metadata:", updateError);
+        } else {
+          console.log("Profile picture changed successfully");
         }
       }
     }
@@ -75,7 +93,11 @@ const ProfileDetails = ({ PFP, username, email, creationDate, icon }) => {
         <div className="row">
           <div className="col-1">
             <figure className="ProfilePFP circle">
-              <img className="ProfilePFP" src={profilePic} alt="Profile" />
+              <img
+                className="ProfilePFP"
+                src={profilePic || "default-profile-pic-url"}
+                alt="Profile"
+              />
               <input
                 type="file"
                 className="file-input"
