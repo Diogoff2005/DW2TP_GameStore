@@ -9,6 +9,7 @@ import "./game.css";
 const Game = () => {
   const [gameData, setGameData] = useState({});
   const [id, setId] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
 
   useEffect(() => {
     //Apanha o id do URL
@@ -40,9 +41,27 @@ const Game = () => {
     fetchGameData();
   }, [id]);
 
+  useEffect(() => {
+    const fetchImageUrl = async () => {
+      try {
+        const { data, error } = await supabase.storage
+          .from("Imgs")
+          .getPublicUrl(gameData.backgroundImg);
+        if (error) {
+          throw error;
+        }
+        setImageUrl(data.publicUrl);
+      } catch (error) {
+        console.error("Error fetching image URL:", error.message);
+      }
+    };
+
+    fetchImageUrl();
+  }, [gameData.backgroundImg]);
+
   return id ? (
     <main className="mainGame">
-      <Banner path={gameData.backgroundImg}></Banner>{" "}
+      <Banner path={imageUrl}></Banner>{" "}
       <GamePage
         id={gameData.id}
         name={gameData.name}

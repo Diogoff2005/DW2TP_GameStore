@@ -1,5 +1,6 @@
-import React, { useState } from "react";
 import "./GameWithDetails.css";
+import { supabase } from "../supabase";
+import React, { useState, useEffect } from "react";
 
 const GameWithDetails = ({
   name,
@@ -12,16 +13,35 @@ const GameWithDetails = ({
   gameKey,
 }) => {
   const [showDetails, setShowDetails] = useState(false);
+  const [imageUrl, setImageUrl] = useState(null);
 
   const toggleDetails = () => {
     setShowDetails(!showDetails);
   };
 
+  useEffect(() => {
+    const fetchImageUrl = async () => {
+      try {
+        const { data, error } = await supabase.storage
+          .from("Imgs")
+          .getPublicUrl(picture);
+        if (error) {
+          throw error;
+        }
+        setImageUrl(data.publicUrl);
+      } catch (error) {
+        console.error("Error fetching image URL:", error.message);
+      }
+    };
+
+    fetchImageUrl();
+  }, [picture]);
+
   return (
     <div className="container grid-container">
       <div className="content row">
         <div className="game-info">
-          <img className="picture col-1" src={picture} alt={name} />
+          <img className="picture col-1" src={imageUrl} alt={name} />
           <div className="info-text col-4-5">
             <h2 className="name">{name}</h2>
             <span className="price">{price}€</span>

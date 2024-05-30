@@ -1,23 +1,44 @@
+.containerGames {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .gamesBackOffice {
   max-width: 1200px;
   margin: auto;
 }
 
-.containerGames {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.title {
-  margin: 5;
-  color: white;
-}
-
-.divGame {
-  max-width: fit-content;
-}
-
-.divGame div {
+.divGameButton {
   display: flex;
   justify-content: space-between;
+}
+
+.popup {
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-inner {
+  background-color: #3f3f3f;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+
+  p {
+    margin-bottom: 1em;
+  }
+}
+
+.popup-inner button {
+  margin: 5px;
 }

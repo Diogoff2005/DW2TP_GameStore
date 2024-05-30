@@ -1,0 +1,82 @@
+body {
+  background-color: #333;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px; /* Adjusted to fit the form elements */
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-title {
+  margin-bottom: 20px;
+  margin-left: 0%;
+  color: #fff;
+}
+
+.game-form {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping for better layout on smaller screens */
+}
+
+.file-input-container {
+  margin-right: 10px;
+}
+
+.text-input {
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-weight: bolder;
+}
+
+.textLow {
+  flex: 1; /* Flex property to distribute space evenly */
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.big-text-input {
+  flex: 1; /* Flex property to distribute space evenly */
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: calc(33.33% - 10px); /* Adjust width for three big inputs in a row */
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #d40813;
+}
