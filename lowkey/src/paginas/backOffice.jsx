@@ -1,9 +1,6 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Card from "../components/card/Card";
-import Buttonsubmit from "../components/Buttonsubmit/Buttonsubmit";
+import BackOfficeComp from "../components/backOfficeComp/BackOfficeComp";
+import React, { useState } from "react";
 import "./backOffice.css";
-import { supabase } from "../components/supabase";
 
 const BackOffice = () => {
   const [games, setGames] = useState([]);
