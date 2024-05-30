@@ -11,6 +11,8 @@ import BackOffice from "../src/paginas/backOffice";
 import GamePage from "../src/paginas/game";
 import ResetEmailPage from "../src/paginas/resetPasswordEmail";
 import ResetPasswordPage from "./paginas/resetPassword";
+import EditGame from "../src/paginas/editGame";
+import AddGame from "../src/paginas/addGame";
 
 function App() {
   return (
@@ -28,10 +30,9 @@ function App() {
             <Route path="resetEmail" element={<ResetEmailPage />} />
             <Route path="resetPassword" element={<ResetPasswordPage />} />
             <Route path="game/:id" element={<GamePage />} />
-            <Route
-              path="cart"
-              element={<Cart />}
-            />
+            <Route path="cart" element={<Cart />} />
+            <Route path="editGame/:id" element={<EditGame />} />
+            <Route path="addGame" element={<AddGame />} />
           </Route>
         </Routes>
       </BrowserRouter>
