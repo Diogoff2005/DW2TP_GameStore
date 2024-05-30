@@ -1,9 +1,27 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { supabase } from "../supabase";
 import "./UploadImage.css";
 
-const UploadImage = ({ onImageChange, BC }) => {
+const UploadImage = ({ onImageChange, BC, name, defaultValue }) => {
   const [imageSrc, setImageSrc] = useState("");
   const fileInputRef = useRef(null);
+
+  useEffect(() => {
+    const fetchDefaultImage = async () => {
+      if (defaultValue) {
+        const { data, error } = await supabase.storage
+          .from("Imgs")
+          .getPublicUrl(defaultValue);
+        if (error) {
+          console.error("Error fetching default image:", error);
+        } else {
+          setImageSrc(data.publicUrl);
+        }
+      }
+    };
+
+    fetchDefaultImage();
+  }, [defaultValue]);
 
   const handleButtonClick = () => {
     fileInputRef.current.click();
@@ -40,12 +58,13 @@ const UploadImage = ({ onImageChange, BC }) => {
         accept="image/*"
         style={{ display: "none" }}
         onChange={handleFileChange}
+        name={name}
       />
       <div
         className="cover-button"
         onClick={handleButtonClick}
         style={{
-          backgroundImage: imageSrc ? `url(${imageSrc})` : "none",
+          backgroundImage: `url(${imageSrc})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           position: "relative",

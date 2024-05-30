@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./GamePage.css";
 import Image from "../card/CART.svg";
+import { supabase } from "../supabase";
 
 const GamePage = ({
   id,
@@ -13,6 +14,7 @@ const GamePage = ({
   gameImg,
 }) => {
   const [cart, setCart] = useState([]);
+  const [imageUrl, setImageUrl] = useState(null);
 
   useEffect(() => {
     const storedCart = sessionStorage.getItem("cart");
@@ -20,6 +22,24 @@ const GamePage = ({
       setCart(JSON.parse(storedCart));
     }
   }, []);
+
+  useEffect(() => {
+    const fetchImageUrl = async () => {
+      try {
+        const { data, error } = await supabase.storage
+          .from("Imgs")
+          .getPublicUrl(gameImg);
+        if (error) {
+          throw error;
+        }
+        setImageUrl(data.publicUrl);
+      } catch (error) {
+        console.error("Error fetching image URL:", error.message);
+      }
+    };
+
+    fetchImageUrl();
+  }, [gameImg]);
 
   const addToCart = (id) => {
     if (!cart.includes(id)) {
@@ -35,7 +55,7 @@ const GamePage = ({
   return (
     <div className="gameContent">
       <div className="game-image">
-        <img src={gameImg} alt={name} />
+        <img src={imageUrl} alt={name} />
       </div>
       <div className="game-details">
         <h1 className="h1gamecard">{name}</h1>

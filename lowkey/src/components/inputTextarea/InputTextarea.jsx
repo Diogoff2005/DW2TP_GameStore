@@ -6,6 +6,8 @@ const InputText = ({
   placeholder,
   width = "200px",
   height = "67px",
+  name,
+  defaultValue = "",
 }) => {
   return (
     <div
@@ -16,9 +18,10 @@ const InputText = ({
 
       <textarea
         placeholder={placeholder}
-        id="area"
-        name="area"
+        id={name}
+        name={name}
         style={{ width: width, height: height }}
+        defaultValue={defaultValue}
       ></textarea>
     </div>
   );
