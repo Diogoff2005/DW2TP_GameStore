@@ -10,6 +10,7 @@ const NavBar = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [games, setGames] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
 
   useEffect(() => {
     const getSession = async () => {
@@ -33,18 +34,24 @@ const NavBar = () => {
     };
 
     getGames();
-    
     getSession();
   }, [location]);
 
   async function getGames() {
     const { data } = await supabase.from("games").select();
     setGames(data);
-    console.log(games);
   }
 
   const handleSearchChange = (event) => {
     setSearchInput(event.target.value);
+  };
+
+  const handleSearchFocus = () => {
+    setIsSearchFocused(true);
+  };
+
+  const handleSearchBlur = () => {
+    setIsSearchFocused(false);
   };
 
   return (
@@ -61,8 +68,12 @@ const NavBar = () => {
             placeholder="Search for games"
             value={searchInput}
             onChange={handleSearchChange}
+            onFocus={handleSearchFocus}
+            onBlur={handleSearchBlur}
           />
-          <Search games={games} searchInput={searchInput} />
+          {isSearchFocused && (
+            <Search games={games} searchInput={searchInput} />
+          )}
         </li>
         {isAdmin && (
           <li className="iconLi">
