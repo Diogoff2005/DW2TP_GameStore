@@ -1,4 +1,4 @@
-import "./Card.css";
+import "./card.css";
 import { Link } from "react-router-dom";
 
 const Card = ({ id, name, price, imagem }) => {
