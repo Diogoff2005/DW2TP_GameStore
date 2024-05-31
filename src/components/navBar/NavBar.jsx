@@ -51,7 +51,16 @@ const NavBar = () => {
   };
 
   const handleSearchBlur = () => {
-    setIsSearchFocused(false);
+    // Delay setting focus state to false to allow click events to register
+    setTimeout(() => {
+      setIsSearchFocused(false);
+    }, 100);
+  };
+
+  const handleSearchClick = (event) => {
+    event.preventDefault();
+    // Keep search focused when interacting with the search component
+    setIsSearchFocused(true);
   };
 
   return (
@@ -72,7 +81,9 @@ const NavBar = () => {
             onBlur={handleSearchBlur}
           />
           {isSearchFocused && (
-            <Search games={games} searchInput={searchInput} />
+            <div onMouseDown={handleSearchClick}>
+              <Search games={games} searchInput={searchInput} />
+            </div>
           )}
         </li>
         {isAdmin && (
