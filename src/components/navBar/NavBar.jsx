@@ -2,11 +2,15 @@ import "./NavBar.css";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { supabase } from "../supabase";
+import Search from "../Search/Search";
 
 const NavBar = () => {
   const location = useLocation();
   const [session, setSession] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [games, setGames] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
 
   useEffect(() => {
     const getSession = async () => {
@@ -29,8 +33,26 @@ const NavBar = () => {
       }
     };
 
+    getGames();
     getSession();
   }, [location]);
+
+  async function getGames() {
+    const { data } = await supabase.from("games").select();
+    setGames(data);
+  }
+
+  const handleSearchChange = (event) => {
+    setSearchInput(event.target.value);
+  };
+
+  const handleSearchFocus = () => {
+    setIsSearchFocused(true);
+  };
+
+  const handleSearchBlur = () => {
+    setIsSearchFocused(false);
+  };
 
   return (
     <nav className="navBar">
@@ -41,7 +63,17 @@ const NavBar = () => {
           </Link>
         </li>
         <li className="search">
-          <input className="searchBar" placeholder="Search for games"></input>
+          <input
+            className="searchBar"
+            placeholder="Search for games"
+            value={searchInput}
+            onChange={handleSearchChange}
+            onFocus={handleSearchFocus}
+            onBlur={handleSearchBlur}
+          />
+          {isSearchFocused && (
+            <Search games={games} searchInput={searchInput} />
+          )}
         </li>
         {isAdmin && (
           <li className="iconLi">
