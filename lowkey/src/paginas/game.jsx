@@ -71,6 +71,7 @@ const Game = () => {
         releaseDate={gameData.releaseDate}
         price={gameData.price}
         gameImg={gameData.coverImg}
+        className="gameMargin"
       />
       <AboutGame
         aboutGame={gameData.aboutGame}

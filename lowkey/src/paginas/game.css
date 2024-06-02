@@ -4,3 +4,6 @@
   display: flex;
   align-items: center;
 }
+.gameMargin {
+  margin-bottom: 40px;
+}
