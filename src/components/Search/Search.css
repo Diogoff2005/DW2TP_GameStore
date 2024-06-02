@@ -5,10 +5,8 @@
   padding: 16px;
   background-color: #1e1e1e;
   position: absolute;
-  width: 100%;
   border-radius: 4px;
   z-index: 1000;
-  overflow-y: auto;
 }
 
 .no-results {
@@ -22,9 +20,6 @@
 
 
 
-.navBarList .search {
-  position: relative;
-}
 
 
 

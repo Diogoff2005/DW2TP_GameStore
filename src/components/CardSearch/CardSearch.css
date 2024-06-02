@@ -1,0 +1,23 @@
+.card {
+  display: flex;
+  padding: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.GameName {
+  font-size: 25px;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.price {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 8px 0 0 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
