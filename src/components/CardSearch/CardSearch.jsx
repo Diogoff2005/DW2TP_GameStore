@@ -1,7 +1,8 @@
-import "./CardSearch.css";
+// Inside CardSearch.js
+
+import React, { useState, useEffect } from "react"; // Add these import statements
 import { Link } from "react-router-dom";
 import { supabase } from "../supabase";
-import React, { useState, useEffect } from "react";
 
 const CardSearch = ({ id, name, price, imagem }) => {
   const [imageUrl, setImageUrl] = useState(null);
@@ -24,20 +25,26 @@ const CardSearch = ({ id, name, price, imagem }) => {
     fetchImageUrl();
   }, [imagem]);
 
+  const handleGameClick = () => {
+    window.location.reload();
+  };
+
   return (
-    <Link to={`/game/${id}`}>
-      <div
-        style={{
-          background: imageUrl
-            ? `url(${imageUrl}) center center / cover no-repeat`
-            : "none",
-        }}
-        className="card"
-      >
-        <h2 className="GameName ">{name}</h2>
-        <h2 className="price">{price}€</h2>
-      </div>
-    </Link>
+    <div onClick={handleGameClick}>
+      <Link to={`/game/${id}`}>
+        <div
+          style={{
+            background: imageUrl
+              ? `url(${imageUrl}) center center / cover no-repeat`
+              : "none",
+          }}
+          className="card"
+        >
+          <h2 className="GameName ">{name}</h2>
+          <h2 className="price">{price}€</h2>
+        </div>
+      </Link>
+    </div>
   );
 };
 

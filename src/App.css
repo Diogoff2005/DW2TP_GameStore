@@ -4,6 +4,9 @@ body {
   background-color: #1e1e1e;
 }
 
+* {
+  text-decoration: none;
+}
 main {
   display: flex;
   flex-direction: column;
