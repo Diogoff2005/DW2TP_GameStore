@@ -19,6 +19,7 @@
   top: 0;
   left: 0;
 }
+
 figure {
   margin: 0px;
 }
@@ -42,6 +43,10 @@ figure {
 }
 .editIcon {
   margin-left: 10px;
+}
+.editIcon:hover {
+  cursor: pointer;
+  transform: scale(0.95);
 }
 .wit {
   min-width: 200px;
